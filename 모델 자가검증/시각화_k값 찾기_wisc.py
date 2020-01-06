@@ -7,7 +7,7 @@ Created on Mon Jan  6 17:31:47 2020
 
 # 시각화를 통해서 k 값에 따른 score를 리턴하는 프로그램
 
-def wisc(k):
+def wisc_plt(k,n):
     # 입력한 k 값 범위까지 그래프를 그릴수 있습니다. ( 1  ~  k )
     
                     # import section
@@ -28,7 +28,7 @@ def wisc(k):
     LABEL = data.iloc[:,0]
     
     # train data와 test data를 나누자.
-    wisc_tr, wisc_ts, wisc_tr_lb, wisc_ts_lb = train_test_split(DATA,LABEL,test_size=0.2)
+    wisc_tr, wisc_ts, wisc_tr_lb, wisc_ts_lb = train_test_split(DATA,LABEL,test_size=n)
     
     # wisc_tr, wisc_tr_lb : training data, traing label
     # wisc_ts, wisc_ts_lb : test data, test label
@@ -47,4 +47,4 @@ def wisc(k):
     plt.xticks(range(1,k,4),range(1,k,4))
     
     
-wisc(150)
+wisc_plt(150,0.3)
